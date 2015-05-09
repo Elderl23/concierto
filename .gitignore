@@ -1,0 +1,15 @@
+.idea/
+#proyecto/settings.py
+#manage.py
+# sublimetext
+/*.sublime-project
+*.sublime-workspace
+
+migrations/
+node_modules/
+
+#python
+*.pyc
+*.swp
+*.sh
+*~

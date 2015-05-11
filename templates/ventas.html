@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+
+
+{% block title %}
+  Jardines
+{% endblock %}
+
+
+{% block nav %}
+<div class="navbar navbar-fixed-top">
+  
+  <div class="navbar-inner">
+    
+    <div class="container">
+      
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      
+      <a class="brand" href="index.html">
+        Sistema de Jardines  
+      </a>    
+      
+  
+    </div> <!-- /container -->
+    
+  </div> <!-- /navbar-inner -->
+  
+</div> <!-- /navbar -->
+{% endblock %}
+
+
+{% block main %}
+<div class="main">
+  
+  <div class="main-inner">
+
+      <div class="container">
+  
+        <div class="row">
+          
+          <div class="span12">          
+            
+            <div class="widget ">
+              
+              <div class="widget-header">
+                <i class="icon-user"></i>
+                <h3>Concierto Los Buquis</h3>
+            </div> <!-- /widget-header -->
+          
+          <div class="widget-content">
+            
+            
+            
+            <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#formcontrols" data-toggle="tab">Ventas de Boletos</a>
+              </li>
+            </ul>
+            
+            <br>
+            
+              <div class="tab-content">
+                <div class="tab-pane active" id="formcontrols">
+                <form id="edit-profile" class="form-horizontal" method="POST" action="">
+                  {% csrf_token %}
+                  <fieldset>  
+                    <div class="control-group">                     
+                      <label class="control-label" for="firstname">Nombre Completo</label>
+                      <div class="controls">
+                        <input type="text" class="span6" id="firstname" placeholder="Esto es opcional" >
+                      </div> <!-- /controls -->       
+                    </div> <!-- /control-group -->
+                    
+                    
+                    <br /><br />
+                    <div class="control-group">                     
+                      <label class="control-label" for="radiobtns">Seleccione la Zona</label>
+                        <div class="controls">
+                          <select name="zona" onchange="this.form.submit(); return false;">
+                            <option value="">------------------</option>
+                            {% for z in ObjQueryZona %}
+                            <option value="{{z.id}}">{{z.descripcion}}</option> 
+                            {% endfor %}
+                          </select>
+                        </div>  <!-- /controls -->      
+                    </div> <!-- /control-group -->
+                    <div class="control-group">                     
+                      <label class="control-label" for="radiobtns">Boletos Disponibles</label>
+                        <div class="controls">
+                          <div style="overflow:auto;width:200px;height:200px;" align="left">
+                            <select style= "width:300px;" name=" " id=" " multiple size="16" align="left">
+                             <option value="1">== 1 ==</option>
+                              <option value="2">== 2 ==</option>
+                              <option value="3">== 3 ==</option>
+                               <option value="4">== 4 == </option>
+                            </select>
+                              </div>
+                        </div>  <!-- /controls -->      
+                    </div> <!-- /control-group -->
+                                        
+                     <br />
+                     <div class="form-actions">
+                      <button type="submit" class="btn btn-primary">Confirmar</button> 
+                      <button class="btn">Cancelar</button>
+                    </div> <!-- /form-actions -->
+                  </fieldset>
+                </form>
+                </div>
+                
+                
+              </div>
+              
+              
+            </div>
+            
+            
+            
+            
+            
+          </div> <!-- /widget-content -->
+            
+        </div> <!-- /widget -->
+            
+        </div> <!-- /span8 -->
+          
+          
+          
+          
+        </div> <!-- /row -->
+  
+      </div> <!-- /container -->
+      
+  </div> <!-- /main-inner -->
+    
+</div> <!-- /main -->
+{% endblock %}
+
+
+{% block footer %}
+  <div class="footer">
+  
+  <div class="footer-inner">
+    
+    <div class="container">
+      
+      <div class="row">
+        
+          <div class="span12">
+            &copy; 2015 <a href="">Jardines</a>.
+          </div> <!-- /span12 -->
+          
+        </div> <!-- /row -->
+        
+    </div> <!-- /container -->
+    
+  </div> <!-- /footer-inner -->
+  
+  </div> <!-- /footer -->
+
+{% endblock %}
+

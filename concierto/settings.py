@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'zona',
     'concierto_zona',
     'tiempo',
+    'reservacion',
 )
 
 MIDDLEWARE_CLASSES = (

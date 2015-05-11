@@ -7,6 +7,8 @@ from django.views.generic import TemplateView, RedirectView, FormView
 #from menu.models import Menu
 class InicioView(TemplateView):
     template_name = 'index.html'
+    #template_name = 'ventas.html'
+    #template_name = 'confirmar-ventas.html'
 
     #Retorna los valores al template como nuevas variables
     def get_context_data(self, **kwargs):

@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+
+
+{% block title %}
+  Jardines
+{% endblock %}
+
+
+{% block nav %}
+<div class="navbar navbar-fixed-top">
+  
+  <div class="navbar-inner">
+    
+    <div class="container">
+      
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      
+      <a class="brand" href="index.html">
+        Sistema de Jardines  
+      </a>    
+      
+  
+    </div> <!-- /container -->
+    
+  </div> <!-- /navbar-inner -->
+  
+</div> <!-- /navbar -->
+{% endblock %}
+
+
+{% block main %}
+<div class="main">
+  <div class="main-inner">
+      <div class="container">
+        <div class="row">
+          <div class="span12">            
+        <form id="edit-profile" class="form-horizontal">
+          <fieldset>  
+            <div class="widget widget-table action-table">
+                  <div class="widget-header"> <i class="icon-th-list"></i>
+                    <h3>Confirmación de la compra de Boletos</h3>
+                  </div>
+                  <!-- /widget-header -->
+                  <div class="widget-content">
+                    <table class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th> Nombre del Cliente</th>
+                          <th>Zona</th>
+                          <th> Nº de Boleto</th>
+                          <th> Nº de Folio</th> 
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> Juan Guzman Martinez </td>
+                          <td>VIP</td>
+                          <td> 100</td>
+                          <td> 
+                            <input type="text" class="span2" placeholder="Captura el Numero de Folio" >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> Fresh Web Development Resources </td>
+                          <td>VIP</td>
+                          <td> 101</td>
+                        <td> 
+                            <input type="text" class="span2" placeholder="Captura el Numero de Folio" >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> Fresh Web Development Resources </td>
+                          <td>VIP</td>
+                          <td> 102</td>
+                        <td> 
+                            <input type="text" class="span2" placeholder="Captura el Numero de Folio" >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> Fresh Web Development Resources </td>
+                          <td>VIP</td>
+                          <td> 103 </td>
+                         <td> 
+                            <input type="text" class="span2" placeholder="Captura el Numero de Folio" >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> Fresh Web Development Resources </td>
+                          <td>VIP</td>
+                          <td> 104 </td>
+                      <td> 
+                            <input type="text" class="span2" placeholder="Captura el Numero de Folio" >
+                          </td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /widget-content --> 
+                </div>
+                 <div class="form-actions">
+              <button type="submit" class="btn btn-primary">  Terminar</button> 
+              <button class="btn">Cancelar</button>
+            </div> <!-- /form-actions -->
+          </fieldset>
+        </form>
+
+            
+        </div> <!-- /span8 -->
+          
+          
+          
+          
+        </div> <!-- /row -->
+  
+      </div> <!-- /container -->
+      
+  </div> <!-- /main-inner -->
+    
+</div> <!-- /main -->
+{% endblock %}
+
+
+{% block footer %}
+  <div class="footer">
+  
+  <div class="footer-inner">
+    
+    <div class="container">
+      
+      <div class="row">
+        
+          <div class="span12">
+            &copy; 2015 <a href="">Jardines</a>.
+          </div> <!-- /span12 -->
+          
+        </div> <!-- /row -->
+        
+    </div> <!-- /container -->
+    
+  </div> <!-- /footer-inner -->
+  
+  </div> <!-- /footer -->
+
+{% endblock %}
+

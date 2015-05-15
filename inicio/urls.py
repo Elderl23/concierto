@@ -1,9 +1,10 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from .views import InicioView
+from .views import ClassView
 
 urlpatterns = patterns('',
-    url(r'^$', InicioView.as_view(), name='LoginView'),
+    url(r'^$', ClassView.as_view(), name='ClassView'),
+    #url(r'^home/$', LoginView.as_view(), name='LoginView'),
 
 )

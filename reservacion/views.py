@@ -5,25 +5,29 @@ from django.template import RequestContext
 from django.views.generic import TemplateView, RedirectView, FormView
 
 from zona.models import Zona
-class ReservacionView(TemplateView):
-    #template_name = 'index.html'
-    template_name = 'ventas.html'
-    #template_name = 'confirmar-ventas.html'
+from .forms import FormReservacion
 
-    def post(request, *args, **kwargs):
-		ObjQueryZona = Zona.objects.all()
-		data = {
-			'ObjQueryZona':ObjQueryZona,
-		}
-		context.update(data)
+class ReservacionView(FormView):
+	form_class = FormReservacion
+	template_name = 'ventas.html'
+	success_url = '/reservacion/'
 
-    #Retorna los valores al template como nuevas variables
-    def get_context_data(self, **kwargs):
+	def post(self, request, *args, **kwargs):
+
+		form = self.get_form()
+		v_zona = request.POST['zona']
+		print v_zona
+		if form.is_valid():
+			return self.form_valid(form)
+		else:
+			return self.form_invalid(form)
+
+	def get_context_data(self, **kwargs):
 		context = super(ReservacionView, self).get_context_data(**kwargs)
 		ObjQueryZona = Zona.objects.all()
 
 		data = {
-			'ObjQueryZona':ObjQueryZona,
+		'ObjQueryZona':ObjQueryZona,
 		}
 
 		context.update(data)

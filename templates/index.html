@@ -66,14 +66,23 @@
             
               <div class="tab-content">
                 <div class="tab-pane active" id="formcontrols">
-                <form id="edit-profile" class="form-horizontal">
+                <form id="edit-profile" class="form-horizontal" method="POST" action="">
+                  {% csrf_token %}
                   <fieldset>
-                    
+
+                    {% for field, errors in form.errors.items %}
+                      <ul class="errorlist">
+                        {% for error in errors %}
+                          <li> {% if field != '__all__' %} {{field}} -- {% endif %} {{ error }}</li>
+                        {% endfor%}
+                      </ul>
+                    {% endfor%}
+
 
                     <div class="control-group">                     
-                      <label class="control-label" for="firstname">Nombre de Usuario</label>
+                      <label class="control-label" for="firstname">{{form.username.label_tag}}</label>
                       <div class="controls">
-                        <input type="text" class="span4" id="user">
+                        {{form.username}}
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
@@ -81,9 +90,9 @@
                     <br /><br />
                     
                     <div class="control-group">                     
-                      <label class="control-label" for="password1">Contraseña</label>
+                      <label class="control-label" for="password1">{{form.password.label_tag}}</label>
                       <div class="controls">
-                        <input type="password" class="span4" id="password" >
+                        {{form.password}}
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
